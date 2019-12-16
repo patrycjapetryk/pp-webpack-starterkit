@@ -1,12 +1,14 @@
 {
-  "name": "test",
+  "name": "pp-webpack-starterkit",
   "version": "1.0.0",
-  "description": "",
+  "homepage": "https://patrycjapetryk.github.io/pp-webpack-starterkit",
+  "description": "pp starter",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.config.js",
     "build": "webpack",
-    "predeploy": "webpack --config ./webpack.config.prod.js"
+    "predeploy": "webpack --config ./webpack.config.prod.js",
+    "deploy": "gh-pages -d dist"
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +21,7 @@
     "copy-webpack-plugin": "^5.1.1",
     "css-loader": "^3.3.2",
     "file-loader": "^5.0.2",
+    "gh-pages": "^2.1.1",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.13.0",
