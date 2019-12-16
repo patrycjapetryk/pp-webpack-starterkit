@@ -6,18 +6,19 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-  mode: "development",
+  mode: "production",
   entry: "./src/js/index.js",
-  devtool: "inline-source-map",
+  devtool: "source-map",
   output: {
     path: outputDir,
-    filename: "js/[name].js"
+    filename: "js/[name].[contenthash:8].js"
   },
   module: {
     rules: [
       {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, "css-loader"]
+        // use: ["style-loader", "css-loader"]
       },
       {
         test: /\.scss$/,
@@ -27,7 +28,7 @@ module.exports = {
         test: /\.(png|svg|jpg|gif)$/,
         loader: "file-loader",
         options: {
-          name: "[name].[ext]",
+          name: "[name][contenthash:8].[ext]",
           outputPath: "assets/img",
           publicPath: "assets/img"
         }
@@ -55,7 +56,7 @@ module.exports = {
       template: "src/content/index.html"
     }),
     new MiniCssExtractPlugin({
-      filename: "[name].css"
+      filename: "[name].[contenthash:8].css"
     }),
     new CopyPlugin([
       { from: "src/assets/img", to: "assets/img" },
