@@ -16,3 +16,9 @@ body {
   background: $gray url("../assets/img/pp.png");
   font-family: "Courier New", Courier, monospace;
 }
+
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
