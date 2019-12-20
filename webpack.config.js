@@ -1,9 +1,10 @@
-const path = require("path");
-const outputDir = path.resolve(__dirname, "dist");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+
+const path = require("path");
+const outputDir = path.resolve(__dirname, "dist");
 
 module.exports = {
   mode: "development",
@@ -31,6 +32,12 @@ module.exports = {
           outputPath: "assets/img",
           publicPath: "assets/img"
         }
+      },
+      {
+        enforce: "pre",
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "eslint-loader"
       },
       {
         test: /\.js$/,
