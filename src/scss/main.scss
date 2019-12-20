@@ -1,5 +1,5 @@
-@import "./_normalize";
-@import "./_variables";
+@import './_normalize';
+@import './_variables';
 
 html {
   box-sizing: border-box;
@@ -13,12 +13,7 @@ html {
 
 body {
   color: $blue;
-  background: $gray url("../assets/img/pp.png");
-  font-family: "Courier New", Courier, monospace;
-}
-
-div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-family: 'Courier New', Courier, monospace;
+  // background: $gray url("../assets/img/pp.png");
+  padding: 50px;
 }
